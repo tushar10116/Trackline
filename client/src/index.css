@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@keyframes train-journey {
+  0% { transform: translateX(-110px); }
+  100% { transform: translateX(calc(100vw + 110px)); }
+}
+
+.train-motion {
+  animation: train-journey 12s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
